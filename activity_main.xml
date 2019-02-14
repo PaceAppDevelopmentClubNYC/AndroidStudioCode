@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Below is the old line of code. It was changed to LinearLayout because we wanted our TextViews (Text) and ImageViews(Images)
+    to be stacked one on top of each other in a linear fashion. ConstraintLayout allows too much flexibility and would
+    have placed them clustered near each other. Which is why it was changed to LinearLayout.
+
+    Old line of code.
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+   Line 24 "android:orientation="vertical" " simply just means that we want to stack them on top of each other.
+   Line 25 android:gravity="center" means we want to arrange our text and images inside our views. Our text and
+   images are wrapped in an invisible box (Technical term box model) and setting the gravity to "center" means that
+   the text and images will be in the center of this invisible box.
+
+
+
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <!--
+        The TextView tag below was created to display the "Computer:0" text. During the
+        game the value of zero is changed to whatever new score the computer gets during
+        the game.
+
+        android:layout_width="wrap_content" and android:layout_height="wrap_content" simply
+        mean that the invisible box will have zero padding aka a tight fit. for the text's
+        width and height. Search the "box model" to understand this concept even more.
+
+        android:text simply means what the text will display originally in this case "Computer:0".
+        android:id is the id we will give to this view so that we can manipulate it later in Java.
+        and android:textSize means how big in size of the text do we want to display it.
+
+    -->
+
+    <TextView
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="Computer:0"
+
+        android:id="@+id/tv_computer"
+
+        android:textSize="32dp"
+
+        />
+
+    <!--
+            The ImageView below displays an image for the app. Specifically it displays the die for the
+            computer and is directly below the text "Computer:0" when the game starts.
+
+            android:layout_width="100dp" & android:layout_height="100dp" are the diemensions we are
+            displaying our die image. We are setting it to be a square. android:id again is the id
+            same as with the first TextView and android:src="@drawable/die_six" means where are we
+            getting our image from. We are getting it from the drawable folder and displaying 6 are
+            the start of the game. android:layout_marginTop="20dp" means that we are giving the top
+            of this image a space of 20dp from the text. Simply to make it look less clustered.
+    -->
+
+    <ImageView
+
+        android:layout_width="100dp"
+
+        android:layout_height="100dp"
+
+        android:id="@+id/iv_computer"
+
+        android:src="@drawable/die_six"
+
+        android:layout_marginTop="20dp"
+
+        />
+
+    <!--
+        Just like the first TextView this is identical to it but with some differences.
+        android:text="VS" means we want this TextView to display "VS". The id has been
+        changed to "@+id/versus because each object needs to have its own distinct id.And
+        the margint_top="40dp" means the top of this text will have a distance of 40 dp with
+        the die above it.
+
+    -->
+
+    <TextView
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="VS"
+
+        android:id="@+id/versus"
+
+        android:textSize="32dp"
+
+        android:layout_marginTop="40dp"
+
+        />
+
+    <!--
+            The ImageView below is almost identical with the first ImageView with the
+            small difference that margin_top="40dp". Reason being is the first image
+            needed distance between itself and the border of the app by only 20dp. For
+            this to look not to clustered the distance was made to 40dp for there to be
+            more some space. More space was needed here than the first image because of
+            it's position.
+
+    -->
+
+
+    <ImageView
+
+        android:layout_width="100dp"
+
+        android:layout_height="100dp"
+
+        android:id="@+id/iv_player"
+
+        android:src="@drawable/die_six"
+
+        android:layout_marginTop="40dp"
+
+        />
+
+    <!--
+
+         This is nearly identical with the TextView with the computer with only minor differences.
+         This TextView is for the player and not the computer therefore the id needed to be changed
+         to "tv_player" and the text changed to "You: 0".
+
+
+
+    -->
+
+    <TextView
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="You: 0"
+
+        android:id="@+id/tv_player"
+
+        android:textSize="32dp"
+
+        android:layout_marginTop="40dp"
+
+        />
+
+    <!--
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        The TextView above was taken out. By default the code
+        displays a "Hello World!" text. However, since we don't
+        need it it was taken out.
+
+        -->
+
+</LinearLayout>
+
+    <!--
+
+    This is the old line of code.
+</android.support.constraint.ConstraintLayout>
+
+    -->
