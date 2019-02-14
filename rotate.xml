@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    This rotate.xml file is to create the animation of these dice spinning
+    around after the player die has been clicked.
+
+    android:fromDegrees="0" and android:toDegrees"360" means that we are going
+    to rotate these dice all the way from zero degrees to 360 degrees or one
+    complete revolution. android:duration="200" means that this rotation will
+    last 200 miliseconds.And pivotX and pivotY means that the images will be
+    rotated around 50% from the center x value and 50% of the distance to the
+    center y value. So essentially rotated around the dead center of each image.
+    50% of the distance from left to right in the x-plane and 50% of the distance
+    in the y-plane from bottom to top is the point from where the rotation will
+    take place.
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <rotate
+
+        android:fromDegrees="0"
+
+        android:duration="200"
+
+        android:toDegrees="360"
+
+        android:pivotX="50%"
+
+        android:pivotY="50%"
+
+        />
+</set>
